@@ -1,7 +1,7 @@
 /// 首页
 /// created by monkeycf on 2020/02/25
 import 'package:flutter/material.dart';
-import 'package:login_dome/module/login.dart';
+import '../../database/sp/sp.dart';
 
 class Homepage extends StatelessWidget {
   final Map arguments;
@@ -19,7 +19,7 @@ class Homepage extends StatelessWidget {
         child: Text('注销'),
         onPressed: () {
           // 清除登录状态，重定向登录页面
-          Login.removeLoginStatus();
+          SP.removeLoginStatus();
           Navigator.pushNamedAndRemoveUntil(
               context, '/', (route) => route == null);
         },

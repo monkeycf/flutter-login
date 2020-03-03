@@ -2,6 +2,7 @@
 /// create by monkeycf on 2020/02/25
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import '../../database/sp/sp.dart';
 import 'dart:async';
 import '../../module/login.dart';
 import 'password_field.dart';
@@ -78,7 +79,7 @@ class LoginFormState extends State<LoginForm> {
     final String userName = _login.userName;
 
     // 保存登录状态
-    Login.addLoginStatus(userName);
+    SP.addLoginStatus(userName);
 
     Timer(Duration(seconds: 1), () {
       Navigator.pushNamedAndRemoveUntil(
